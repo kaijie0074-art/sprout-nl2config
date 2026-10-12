@@ -1,0 +1,44 @@
+{
+  "siteName": "客户视频站",
+  "templateId": "template_video",
+  "platforms": [
+    "android"
+  ],
+  "package": "pro",
+  "trackParams": {
+    "ch_weixin_main": "wx-1001"
+  },
+  "pages": [
+    {
+      "pageId": "home",
+      "title": "首页",
+      "components": [
+        {
+          "componentId": "video_player",
+          "props": {
+            "autoplay": true
+          },
+          "visible": true
+        },
+        {
+          "componentId": "ad_banner",
+          "props": {
+            "src": "banner-a.png"
+          },
+          "visible": true
+        }
+      ]
+    },
+    {
+      "pageId": "community",
+      "title": "社区",
+      "components": [
+        {
+          "componentId": "community_forum",
+          "props": {},
+          "visible": true
+        }
+      ]
+    }
+  ]
+}
