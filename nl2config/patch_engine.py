@@ -114,8 +114,11 @@ def _apply_op(root: dict, op: dict, segs: list, idx: int, rejections: list):
         if op["op"] == "add":
             _set(root, segs, op["value"], insert=True)
             return None
-    except PatchPathError as e:
-        rejections.append(PatchRejection(idx, "PATH_UNRESOLVABLE", op.get("path", "/"), str(e)))
+    except (PatchPathError, IndexError, ValueError, TypeError, KeyError) as e:
+        # R1-1（评审修复）：非数字下标/越界/类型不匹配统一转为结构化拒绝，
+        # patch 来自模型输出——防线自身不能先崩。
+        rejections.append(PatchRejection(idx, "PATH_UNRESOLVABLE", op.get("path", "/"),
+                                         f"路径无法解析：{type(e).__name__}: {e}"))
         return e
     return None
 

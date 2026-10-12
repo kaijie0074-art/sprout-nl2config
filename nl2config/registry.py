@@ -31,10 +31,12 @@ TEMPLATES = {
 }
 
 # 套餐：模块白名单 + 广告位数量上限（业务约束：超出售卖范围 = 计费事故）
+# R1-2（评审修复）：白名单 sorted 固化——set 推导顺序不定会导致错误信息
+# options 与 golden 对照跨运行漂移，不可复现。
 PACKAGES = {
-    "basic":   {"modules": ["video_player", "search_bar", "nav_tab", "ad_banner"], "maxAdSlots": 2},
-    "pro":     {"modules": list(COMPONENTS.keys() - {"live_stream"}),              "maxAdSlots": 4},
-    "flagship": {"modules": list(COMPONENTS.keys()),                               "maxAdSlots": 6},
+    "basic":    {"modules": ["video_player", "search_bar", "nav_tab", "ad_banner"], "maxAdSlots": 2},
+    "pro":      {"modules": sorted(COMPONENTS.keys() - {"live_stream"}),            "maxAdSlots": 4},
+    "flagship": {"modules": sorted(COMPONENTS.keys()),                              "maxAdSlots": 6},
 }
 
 # 渠道追踪参数格式（业务约束：归因出错 = 收入层面事故）
