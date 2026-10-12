@@ -24,9 +24,10 @@ class TestReviewFixes(unittest.TestCase):
         self.assertEqual(r.rejections[0].code, "PATH_UNRESOLVABLE")
 
     def test_r1_2_package_whitelist_sorted(self):
-        """R1-2：套餐白名单顺序跨运行稳定（sorted 固化）。"""
-        for pkg in PACKAGES.values():
-            self.assertEqual(pkg["modules"], sorted(pkg["modules"]))
+        """R1-2：set 推导的套餐白名单（pro/flagship）顺序跨运行稳定。
+        basic 为手写业务顺序，本身稳定，不在本条范围。"""
+        self.assertEqual(PACKAGES["pro"]["modules"], sorted(PACKAGES["pro"]["modules"]))
+        self.assertEqual(PACKAGES["flagship"]["modules"], sorted(PACKAGES["flagship"]["modules"]))
 
 
 if __name__ == "__main__":
