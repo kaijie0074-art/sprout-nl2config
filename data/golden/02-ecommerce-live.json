@@ -1,0 +1,58 @@
+{
+  "name": "02-ecommerce-live",
+  "scenario": "ok_ecommerce",
+  "requirement": "做一个电商带货站，双端，旗舰套餐，接抖音渠道追踪",
+  "expected": {
+    "siteName": "带货商城站",
+    "templateId": "template_ecommerce",
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "package": "flagship",
+    "trackParams": {
+      "ch_douyin_shop": "dy-2001"
+    },
+    "pages": [
+      {
+        "pageId": "home",
+        "title": "首页",
+        "components": [
+          {
+            "componentId": "mall_shop",
+            "props": {
+              "cart": true
+            },
+            "visible": true
+          },
+          {
+            "componentId": "coupon_center",
+            "props": {},
+            "visible": true
+          },
+          {
+            "componentId": "short_video_feed",
+            "props": {
+              "swipe": "up"
+            },
+            "visible": true
+          },
+          {
+            "componentId": "ad_banner",
+            "props": {
+              "src": "banner-b.png"
+            },
+            "visible": true
+          },
+          {
+            "componentId": "ad_banner",
+            "props": {
+              "src": "banner-c.png"
+            },
+            "visible": true
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "03-community-ios",
+  "scenario": "ok_community",
+  "requirement": "做一个本地社区论坛站，只要苹果端",
+  "expected": {
+    "siteName": "本地社区站",
+    "templateId": "template_community",
+    "platforms": [
+      "ios"
+    ],
+    "package": "pro",
+    "pages": [
+      {
+        "pageId": "home",
+        "title": "首页",
+        "components": [
+          {
+            "componentId": "community_forum",
+            "props": {},
+            "visible": true
+          },
+          {
+            "componentId": "search_bar",
+            "props": {},
+            "visible": true
+          },
+          {
+            "componentId": "nav_tab",
+            "props": {
+              "tabs": 4
+            },
+            "visible": true
+          }
+        ]
+      }
+    ]
+  }
+}
