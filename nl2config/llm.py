@@ -39,9 +39,17 @@ SYSTEM_PROMPT = (
     "你是低代码平台的配置生成器。根据用户需求输出一个 JSON 对象（低代码站点配置），"
     "只输出 JSON，不要输出任何解释文字。可用资产如下：\n" + _asset_sheet() + "\n"
     "配置结构：siteName(string), templateId(string), platforms(list, 值∈android/ios), "
-    "package(string), trackParams(object, 渠道参数), pages(list of {pageId, title, "
-    "components: list of {componentId, props: object}}), 以及可选 adSlots(list)。"
-    "只能使用注册表中存在的 componentId/templateId/package；组件平台支持矩阵必须遵守。"
+    "package(string), trackParams(object), pages(list of {pageId, title, "
+    "components: list of {componentId, props: object, visible: bool}}), 以及可选 adSlots(list)。\n"
+    "trackParams 格式（严格）：键必须匹配 ch_<channel>_<id>（channel∈weixin/douyin/baidu，"
+    "id 为小写字母数字下划线，如 ch_weixin_main），值为该渠道投放 ID 字符串（如 wx-1001）；"
+    "需求提到\"微信/抖音/百度渠道追踪\"时必须按此格式给出对应键值。\n"
+    "套餐白名单（package 决定可用组件，越界=计费事故）：\n"
+    + "\n".join(
+        f"  {pkg}: {info['modules']}（广告位上限 {info['maxAdSlots']}）"
+        for pkg, info in PACKAGES.items()
+    )
+    + "\n只能使用注册表中存在的 componentId/templateId/package；组件平台支持矩阵必须遵守。"
 )
 
 
@@ -84,7 +92,8 @@ class OpenAICompatLLM:
             data=body,
             headers={"Content-Type": "application/json", "Authorization": f"Bearer {self._api_key}"},
         )
-        with urllib.request.urlopen(req, timeout=60) as resp:
+        timeout_s = int(os.environ.get("NL2CONFIG_TIMEOUT", "120"))
+        with urllib.request.urlopen(req, timeout=timeout_s) as resp:
             payload = json.loads(resp.read().decode("utf-8"))
         text = payload["choices"][0]["message"]["content"].strip()
         # 容错剥 ```json 围栏

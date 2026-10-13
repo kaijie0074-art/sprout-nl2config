@@ -1,0 +1,81 @@
+{
+  "schema_version_note": "golden 与 registry.SCHEMA_VERSION 绑定",
+  "passed": false,
+  "total": 8,
+  "failed": [
+    "03-community-ios",
+    "05-type-drift-repair",
+    "07-missing-required-repair",
+    "08-platform-support-repair"
+  ],
+  "metrics": {
+    "first_pass_rate": 0.375,
+    "converged_rate": 0.5,
+    "hallucination_rate": 0.125
+  },
+  "per_pair": [
+    {
+      "name": "01-video-info-site",
+      "passed": true,
+      "attempts": 1,
+      "first_pass": true,
+      "had_hallucination": false
+    },
+    {
+      "name": "02-ecommerce-live",
+      "passed": true,
+      "attempts": 1,
+      "first_pass": true,
+      "had_hallucination": false
+    },
+    {
+      "name": "03-community-ios",
+      "passed": false,
+      "attempts": 4,
+      "first_pass": false,
+      "had_hallucination": false
+    },
+    {
+      "name": "04-hallucination-repair",
+      "passed": true,
+      "attempts": 2,
+      "first_pass": false,
+      "had_hallucination": true
+    },
+    {
+      "name": "05-type-drift-repair",
+      "passed": false,
+      "attempts": 4,
+      "first_pass": false,
+      "had_hallucination": false
+    },
+    {
+      "name": "06-naming-drift-repair",
+      "passed": true,
+      "attempts": 1,
+      "first_pass": true,
+      "had_hallucination": false
+    },
+    {
+      "name": "07-missing-required-repair",
+      "passed": false,
+      "attempts": 4,
+      "first_pass": false,
+      "had_hallucination": false
+    },
+    {
+      "name": "08-platform-support-repair",
+      "passed": false,
+      "attempts": 4,
+      "first_pass": false,
+      "had_hallucination": false
+    }
+  ],
+  "meta": {
+    "model": "glm-4-flash",
+    "prompt": "v2-with-schema",
+    "base_url": "https://open.bigmodel.cn/api/coding/paas/v4",
+    "date": "2026-10-13",
+    "duration_s": 202.8
+  }
+}
