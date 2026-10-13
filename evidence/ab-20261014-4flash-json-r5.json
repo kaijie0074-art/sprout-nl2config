@@ -1,0 +1,740 @@
+{
+ "model": "glm-4-flash",
+ "max_retries": 5,
+ "timestamp": "2026-10-14T01:36:00",
+ "converged_rate": 0.3333333333333333,
+ "first_pass_rate": 0.0,
+ "failed": [
+  "05-type-drift-repair",
+  "08-platform-support-repair"
+ ],
+ "records": [
+  {
+   "name": "05-type-drift-repair",
+   "status": "degraded",
+   "attempts": 6,
+   "wall_seconds": 75.1,
+   "violation_history": [
+    [
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/0/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/1/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/2/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/3/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     }
+    ],
+    [
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/0/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/1/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/2/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/3/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/4/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     }
+    ],
+    [
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/0/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/1/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/2/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/3/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/4/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     }
+    ],
+    [
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/0/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/1/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/2/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/3/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/4/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     }
+    ],
+    [
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/0/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/1/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/2/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/3/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/4/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     }
+    ],
+    [
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/0/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/1/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/2/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/3/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     },
+     {
+      "code": "WRONG_TYPE",
+      "path": "/pages/0/components/4/visible",
+      "message": "类型错误：期望 bool，实际 str",
+      "layer": "structure"
+     }
+    ]
+   ],
+   "config": null,
+   "degraded_reasons": [
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/0/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/1/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/2/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/3/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/0/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/1/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/2/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/3/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/4/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/0/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/1/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/2/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/3/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/4/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/0/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/1/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/2/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/3/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/4/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/0/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/1/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/2/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/3/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/4/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/0/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/1/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/2/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/3/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    },
+    {
+     "code": "WRONG_TYPE",
+     "path": "/pages/0/components/4/visible",
+     "message": "类型错误：期望 bool，实际 str",
+     "layer": "structure"
+    }
+   ]
+  },
+  {
+   "name": "07-missing-required-repair",
+   "status": "ok",
+   "attempts": 5,
+   "wall_seconds": 63.2,
+   "violation_history": [
+    [
+     {
+      "code": "MISSING_REQUIRED",
+      "path": "/templateId",
+      "message": "缺少必填字段 templateId",
+      "layer": "structure"
+     }
+    ],
+    [
+     {
+      "code": "MISSING_REQUIRED",
+      "path": "/templateId",
+      "message": "缺少必填字段 templateId",
+      "layer": "structure"
+     }
+    ],
+    [
+     {
+      "code": "MISSING_REQUIRED",
+      "path": "/templateId",
+      "message": "缺少必填字段 templateId",
+      "layer": "structure"
+     }
+    ],
+    [
+     {
+      "code": "MISSING_REQUIRED",
+      "path": "/templateId",
+      "message": "缺少必填字段 templateId",
+      "layer": "structure"
+     }
+    ],
+    []
+   ],
+   "config": {
+    "siteName": "视频站",
+    "templateId": "template_video",
+    "platforms": [
+     "android",
+     "ios"
+    ],
+    "package": "flagship",
+    "trackParams": {
+     "ch_weixin_main": "wx-1001",
+     "ch_douyin_main": "dy-1001",
+     "ch_baidu_main": "bd-1001"
+    },
+    "pages": [
+     {
+      "pageId": "home",
+      "title": "首页",
+      "components": [
+       {
+        "componentId": "video_player",
+        "props": {},
+        "visible": true
+       },
+       {
+        "componentId": "short_video_feed",
+        "props": {},
+        "visible": true
+       },
+       {
+        "componentId": "ad_banner",
+        "props": {},
+        "visible": true
+       },
+       {
+        "componentId": "search_bar",
+        "props": {},
+        "visible": true
+       },
+       {
+        "componentId": "nav_tab",
+        "props": {},
+        "visible": true
+       }
+      ]
+     }
+    ],
+    "adSlots": [
+     "adBanner1",
+     "adBanner2"
+    ]
+   },
+   "degraded_reasons": []
+  },
+  {
+   "name": "08-platform-support-repair",
+   "status": "degraded",
+   "attempts": 6,
+   "wall_seconds": 58.6,
+   "violation_history": [
+    [
+     {
+      "code": "UNSUPPORTED_PLATFORM",
+      "path": "/pages/0/components/0",
+      "message": "组件 live_stream 不支持平台 ['ios']",
+      "layer": "semantic",
+      "options": [
+       "android"
+      ]
+     },
+     {
+      "code": "TRACK_PARAM_FORMAT",
+      "path": "/trackParams/ch_ios_main",
+      "message": "追踪参数 'ch_ios_main' 不符合渠道格式 ch_<channel>_<id>",
+      "layer": "business",
+      "options": [
+       "ch_weixin_*",
+       "ch_douyin_*",
+       "ch_baidu_*"
+      ]
+     }
+    ],
+    [
+     {
+      "code": "UNSUPPORTED_PLATFORM",
+      "path": "/pages/0/components/0",
+      "message": "组件 live_stream 不支持平台 ['ios']",
+      "layer": "semantic",
+      "options": [
+       "android"
+      ]
+     },
+     {
+      "code": "TRACK_PARAM_FORMAT",
+      "path": "/trackParams/ch_ios_main",
+      "message": "追踪参数 'ch_ios_main' 不符合渠道格式 ch_<channel>_<id>",
+      "layer": "business",
+      "options": [
+       "ch_weixin_*",
+       "ch_douyin_*",
+       "ch_baidu_*"
+      ]
+     }
+    ],
+    [
+     {
+      "code": "UNSUPPORTED_PLATFORM",
+      "path": "/pages/0/components/0",
+      "message": "组件 live_stream 不支持平台 ['ios']",
+      "layer": "semantic",
+      "options": [
+       "android"
+      ]
+     },
+     {
+      "code": "TRACK_PARAM_FORMAT",
+      "path": "/trackParams/ch_ios_main",
+      "message": "追踪参数 'ch_ios_main' 不符合渠道格式 ch_<channel>_<id>",
+      "layer": "business",
+      "options": [
+       "ch_weixin_*",
+       "ch_douyin_*",
+       "ch_baidu_*"
+      ]
+     }
+    ],
+    [
+     {
+      "code": "UNSUPPORTED_PLATFORM",
+      "path": "/pages/0/components/0",
+      "message": "组件 live_stream 不支持平台 ['ios']",
+      "layer": "semantic",
+      "options": [
+       "android"
+      ]
+     },
+     {
+      "code": "TRACK_PARAM_FORMAT",
+      "path": "/trackParams/ch_ios_main",
+      "message": "追踪参数 'ch_ios_main' 不符合渠道格式 ch_<channel>_<id>",
+      "layer": "business",
+      "options": [
+       "ch_weixin_*",
+       "ch_douyin_*",
+       "ch_baidu_*"
+      ]
+     }
+    ],
+    [
+     {
+      "code": "UNSUPPORTED_PLATFORM",
+      "path": "/pages/0/components/0",
+      "message": "组件 live_stream 不支持平台 ['ios']",
+      "layer": "semantic",
+      "options": [
+       "android"
+      ]
+     },
+     {
+      "code": "TRACK_PARAM_FORMAT",
+      "path": "/trackParams/ch_ios_main",
+      "message": "追踪参数 'ch_ios_main' 不符合渠道格式 ch_<channel>_<id>",
+      "layer": "business",
+      "options": [
+       "ch_weixin_*",
+       "ch_douyin_*",
+       "ch_baidu_*"
+      ]
+     }
+    ],
+    [
+     {
+      "code": "UNSUPPORTED_PLATFORM",
+      "path": "/pages/0/components/0",
+      "message": "组件 live_stream 不支持平台 ['ios']",
+      "layer": "semantic",
+      "options": [
+       "android"
+      ]
+     },
+     {
+      "code": "TRACK_PARAM_FORMAT",
+      "path": "/trackParams/ch_ios_main",
+      "message": "追踪参数 'ch_ios_main' 不符合渠道格式 ch_<channel>_<id>",
+      "layer": "business",
+      "options": [
+       "ch_weixin_*",
+       "ch_douyin_*",
+       "ch_baidu_*"
+      ]
+     }
+    ]
+   ],
+   "config": null,
+   "degraded_reasons": [
+    {
+     "code": "UNSUPPORTED_PLATFORM",
+     "path": "/pages/0/components/0",
+     "message": "组件 live_stream 不支持平台 ['ios']",
+     "layer": "semantic",
+     "options": [
+      "android"
+     ]
+    },
+    {
+     "code": "TRACK_PARAM_FORMAT",
+     "path": "/trackParams/ch_ios_main",
+     "message": "追踪参数 'ch_ios_main' 不符合渠道格式 ch_<channel>_<id>",
+     "layer": "business",
+     "options": [
+      "ch_weixin_*",
+      "ch_douyin_*",
+      "ch_baidu_*"
+     ]
+    },
+    {
+     "code": "UNSUPPORTED_PLATFORM",
+     "path": "/pages/0/components/0",
+     "message": "组件 live_stream 不支持平台 ['ios']",
+     "layer": "semantic",
+     "options": [
+      "android"
+     ]
+    },
+    {
+     "code": "TRACK_PARAM_FORMAT",
+     "path": "/trackParams/ch_ios_main",
+     "message": "追踪参数 'ch_ios_main' 不符合渠道格式 ch_<channel>_<id>",
+     "layer": "business",
+     "options": [
+      "ch_weixin_*",
+      "ch_douyin_*",
+      "ch_baidu_*"
+     ]
+    },
+    {
+     "code": "UNSUPPORTED_PLATFORM",
+     "path": "/pages/0/components/0",
+     "message": "组件 live_stream 不支持平台 ['ios']",
+     "layer": "semantic",
+     "options": [
+      "android"
+     ]
+    },
+    {
+     "code": "TRACK_PARAM_FORMAT",
+     "path": "/trackParams/ch_ios_main",
+     "message": "追踪参数 'ch_ios_main' 不符合渠道格式 ch_<channel>_<id>",
+     "layer": "business",
+     "options": [
+      "ch_weixin_*",
+      "ch_douyin_*",
+      "ch_baidu_*"
+     ]
+    },
+    {
+     "code": "UNSUPPORTED_PLATFORM",
+     "path": "/pages/0/components/0",
+     "message": "组件 live_stream 不支持平台 ['ios']",
+     "layer": "semantic",
+     "options": [
+      "android"
+     ]
+    },
+    {
+     "code": "TRACK_PARAM_FORMAT",
+     "path": "/trackParams/ch_ios_main",
+     "message": "追踪参数 'ch_ios_main' 不符合渠道格式 ch_<channel>_<id>",
+     "layer": "business",
+     "options": [
+      "ch_weixin_*",
+      "ch_douyin_*",
+      "ch_baidu_*"
+     ]
+    },
+    {
+     "code": "UNSUPPORTED_PLATFORM",
+     "path": "/pages/0/components/0",
+     "message": "组件 live_stream 不支持平台 ['ios']",
+     "layer": "semantic",
+     "options": [
+      "android"
+     ]
+    },
+    {
+     "code": "TRACK_PARAM_FORMAT",
+     "path": "/trackParams/ch_ios_main",
+     "message": "追踪参数 'ch_ios_main' 不符合渠道格式 ch_<channel>_<id>",
+     "layer": "business",
+     "options": [
+      "ch_weixin_*",
+      "ch_douyin_*",
+      "ch_baidu_*"
+     ]
+    },
+    {
+     "code": "UNSUPPORTED_PLATFORM",
+     "path": "/pages/0/components/0",
+     "message": "组件 live_stream 不支持平台 ['ios']",
+     "layer": "semantic",
+     "options": [
+      "android"
+     ]
+    },
+    {
+     "code": "TRACK_PARAM_FORMAT",
+     "path": "/trackParams/ch_ios_main",
+     "message": "追踪参数 'ch_ios_main' 不符合渠道格式 ch_<channel>_<id>",
+     "layer": "business",
+     "options": [
+      "ch_weixin_*",
+      "ch_douyin_*",
+      "ch_baidu_*"
+     ]
+    }
+   ]
+  }
+ ]
+}

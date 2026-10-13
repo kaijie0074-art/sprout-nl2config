@@ -38,27 +38,33 @@ flowchart LR
 ## 快速开始
 
 ```bash
-# 需求 → 配置（幻觉 ID 场景，第 2 轮收敛）
-python3 -m nl2config.cli generate --requirement "做个视频站" --scenario hallucinated_id
+# 需求 → 配置（真实 LLM；幻觉 ID 场景通常第 2 轮收敛）
+export NL2CONFIG_API_KEY=...   # 可选 NL2CONFIG_BASE_URL / NL2CONFIG_MODEL / NL2CONFIG_TIMEOUT
+python3 -m nl2config.cli generate --requirement "做个视频站"
 
-# 不可纠正场景 → 显式降级转人工（附失败原因）
-python3 -m nl2config.cli generate --requirement "顽固场景" --scenario stubborn
+# 不可纠正场景 → 显式降级转人工（附失败原因与最后一轮非法输出）
+python3 -m nl2config.cli generate --requirement "顽固场景"
 
 # 受约束增量修改（触锁即拒）
 python3 -m nl2config.cli patch --config examples/site.json \
   --patch examples/patch.json --locked /pages/0/components/1/props
 
-# golden 回归（含指标）
+# golden 回归（含指标；无凭证时 live 用例自动跳过）
 python3 -m nl2config.cli regress
 ```
 
 ## 验证
 
 ```bash
-python3 -m unittest discover -s tests -v   # 21 项全绿
+python3 -m unittest discover -s tests -v   # 42 项全绿（live 用例无凭证自动跳过）
 ```
 
 修复前后的完整对比见 [docs/06-回归记录.md](docs/06-回归记录.md)：同一套测试在缺陷基线上 **26 项失败**，修复后全部通过；校验-修复循环保证"含重试收敛 + 永不返回非法配置"。golden 指标（一次通过率/收敛率/幻觉 ID 率）对真实 LLM 在线度量（`python -m nl2config.cli regress`，需凭证）。
+
+深潜研究（2026-10-14）：repair 类不收敛的根因解剖与模型能力上限——glm-4-flash 的失败
+（指令锚定/过约束松弛）对反馈模板升级、few-shot、重试加倍全部免疫，glm-5.3-flash 同反馈一轮修复；
+temperature≈0 下输出仍非逐字节确定。完整问题链 Q1–Q8 与复现命令见
+[docs/research/deep-dive-20261014.md](docs/research/deep-dive-20261014.md)。
 
 ## 目录结构
 
@@ -72,7 +78,7 @@ nl2config/
   llm.py           # 真实 LLM 客户端（OpenAI 兼容协议，环境变量凭证）
   registry.py      # 平台资产注册表（组件/模板/套餐/广告位约束，带版本）
   api.py           # 稳定 API 表面（baseline 与最终态共用签名）
-tests/             # 21 项回归测试（baseline 上 26 项失败 = 复现材料）
+tests/             # 42 项回归测试（baseline 上 26 项失败 = 复现材料；live 用例凭证门控）
 data/golden/       # 8 对 golden pairs
 docs/              # 问题报告 / 复现 / 调研 / 设计 / 覆盖 / 回归
 examples/          # CLI 演示样例

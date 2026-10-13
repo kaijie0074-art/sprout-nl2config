@@ -88,7 +88,9 @@ class TestDegradation(unittest.TestCase):
         self.assertEqual(r.status, "degraded")
         self.assertIsNone(r.config, "降级时不得返回半成品配置")
         self.assertEqual(r.attempts, 4, "1 次生成 + 3 次重试")
-        self.assertTrue(r.degraded_reasons, "降级必须携带失败原因清单供人工处置")
+        self.assertIsNotNone(r.last_raw_config,
+                             "降级时保留最后一轮非法输出供排障/转人工（不作为交付物）")
+        self.assertIsNone(generate_config("ok 场景", llm=ScriptedProvider("ok")).last_raw_config)
 
     def test_no_intermediate_state(self):
         """任何场景的返回只有 ok（全绿）或 degraded（附原因），无第三态。"""

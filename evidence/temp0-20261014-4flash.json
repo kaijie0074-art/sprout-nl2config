@@ -1,0 +1,17 @@
+{
+ "mode": "temp0",
+ "pair": "05-type-drift-repair",
+ "n": 3,
+ "model": "glm-4-flash",
+ "hashes": [
+  "f18280226bbbcdbe",
+  "518119a3ede7737e",
+  "267cfb485bc38644"
+ ],
+ "unique_hashes": 3,
+ "contents": [
+  "```json\n{\n  \"siteName\": \"Video Site\",\n  \"templateId\": \"template_video\",\n  \"platforms\": [\"android\", \"ios\"],\n  \"package\": \"flagship\",\n  \"trackParams\": {},\n  \"pages\": [\n    {\n      \"pageId\": \"home\",\n      \"title\": \"Home Page\",\n      \"components\": [\n        {\n          \"componentId\": \"video_player\",\n          \"props\": {},\n          \"visible\": \"true\"\n        },\n        {\n          \"componentId\": \"search_bar\",\n          \"props\": {},\n          \"visible\": \"true\"\n        },\n        {\n          \"componentId\": \"nav_tab\",\n          \"props\": {},\n          \"visible\": \"true\"\n        },\n        {\n          \"componentId\": \"ad_banner\",\n          \"props\": {},\n          \"visible\": \"true\"\n        },\n        {\n          \"componentId\": \"short_video_feed\",\n          \"props\": {},\n          \"visible\": \"true\"\n        }\n      ]\n    }\n  ],\n  \"adSlots\": []\n}\n```",
+  "{\n  \"siteName\": \"视频站\",\n  \"templateId\": \"template_video\",\n  \"platforms\": [\"android\", \"ios\"],\n  \"package\": \"basic\",\n  \"trackParams\": {\n    \"ch_weixin_main\": \"wx-1001\"\n  },\n  \"pages\": [\n    {\n      \"pageId\": \"home\",\n      \"title\": \"首页\",\n      \"components\": [\n        {\n          \"componentId\": \"video_player\",\n          \"props\": {},\n          \"visible\": \"true\"\n        },\n        {\n          \"componentId\": \"search_bar\",\n          \"props\": {},\n          \"visible\": \"true\"\n        },\n        {\n          \"componentId\": \"nav_tab\",\n          \"props\": {},\n          \"visible\": \"true\"\n        },\n        {\n          \"componentId\": \"ad_banner\",\n          \"props\": {},\n          \"visible\": \"true\"\n        }\n      ]\n    }\n  ],\n  \"adSlots\": []\n}",
+  "{\n  \"siteName\": \"VideoStation\",\n  \"templateId\": \"template_video\",\n  \"platforms\": [\"android\", \"ios\"],\n  \"package\": \"flagship\",\n  \"trackParams\": {\n    \"ch_weixin_main\": \"wx-1001\",\n    \"ch_douyin_main\": \"dy-1001\",\n    \"ch_baidu_main\": \"bd-1001\"\n  },\n  \"pages\": [\n    {\n      \"pageId\": \"home\",\n      \"title\": \"Home\",\n      \"components\": [\n        {\n          \"componentId\": \"video_player\",\n          \"props\": {},\n          \"visible\": \"true\"\n        },\n        {\n          \"componentId\": \"search_bar\",\n          \"props\": {},\n          \"visible\": \"true\"\n        },\n        {\n          \"componentId\": \"nav_tab\",\n          \"props\": {},\n          \"visible\": \"true\"\n        }\n      ]\n    }\n  ],\n  \"adSlots\": [\n    \"ad_banner_1\",\n    \"ad_banner_2\",\n    \"ad_banner_3\",\n    \"ad_banner_4\",\n    \"ad_banner_5\",\n    \"ad_banner_6\"\n  ]\n}"
+ ]
+}

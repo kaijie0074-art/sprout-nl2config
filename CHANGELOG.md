@@ -2,6 +2,25 @@
 
 本仓库遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/) 格式。
 
+## [research] - 2026-10-14
+
+自主深潜研究（Q1–Q8 问题链，详见 [docs/research/deep-dive-20261014.md](docs/research/deep-dive-20261014.md)）。
+
+### 新增
+- **传输层韧性**：`OpenAICompatLLM` 429/5xx 退避重试（`NL2CONFIG_BACKOFF_SECONDS`/`NL2CONFIG_MAX_RETRIES`）与调用间隔（`NL2CONFIG_CALL_INTERVAL`），长实跑不再被共享配额限速打断。
+- **研究开关**（默认全关，v2 基线逐字节不变）：反馈风格 `NL2CONFIG_FEEDBACK_STYLE=directive`（附加当前值+修正指令）、few-shot 注入 `NL2CONFIG_FEW_SHOT=1`。
+- **降级现场保留**：`GenerationResult.last_raw_config`——降级时携带最后一轮非法输出（排障/转人工上下文，不作为交付物），CLI 同步输出。
+- 研究脚本（evidence/）：`collect_golden_detail.py`、`anchor_probe.py`、`stability_probe.py`、`fmt_fidelity_bench.py`；新增原始数据 8 份。
+- 测试 21 → 42 项（传输层退避 5 项 + 研究开关 9 项 + last_raw_config 断言等）。
+
+### 关键结论
+- glm-5.3-flash 同 v2 prompt 全量 golden 收敛 8/8（4-flash 稳定卡 05/08）——管线无缺陷，瓶颈在小模型反馈吸收能力。
+- glm-4-flash 的两类失败（对抗性指令锚定、过约束松弛）对反馈模板升级/few-shot/重试加倍全部免疫；temperature≈0 输出仍非逐字节确定（基础设施级随机性）。
+- glm-5.3-flash 首发另有 ~20–33% 系统性 ID 改写失败模式（`_1` 实例化后缀/语义 ID 发明），可被 1 轮反馈修复。
+
+### 修复
+- 移除误提交的 `nl2config/__pycache__`（.gitignore 已覆盖）；README 快速开始修正为真实 CLI 参数（`--scenario` 已随 v1.0.0 移除）。
+
 ## [v1.0.0] - 2026-10-13
 
 修复问题报告（Issue #1）的全部 7 类失败模式，21/21 测试通过，golden 回归全绿。

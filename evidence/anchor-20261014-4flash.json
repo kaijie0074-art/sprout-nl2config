@@ -1,0 +1,262 @@
+{
+ "model": "glm-4-flash",
+ "n_per_arm": 4,
+ "timestamp": "2026-10-14T01:36:45",
+ "pairs": [
+  {
+   "name": "05-type-drift-repair",
+   "trap": {
+    "requirement": "做一个视频站（模型会先把 visible 写成字符串 'true'）",
+    "first_pass_ok_rate": 0.0,
+    "visible_bool_rate": 0.0,
+    "codes_flat": [
+     "WRONG_TYPE",
+     "WRONG_TYPE",
+     "WRONG_TYPE",
+     "WRONG_TYPE",
+     "WRONG_TYPE",
+     "WRONG_TYPE",
+     "WRONG_TYPE",
+     "WRONG_TYPE",
+     "WRONG_TYPE",
+     "WRONG_TYPE",
+     "WRONG_TYPE",
+     "WRONG_TYPE"
+    ],
+    "samples": [
+     {
+      "ok": false,
+      "codes": [
+       "WRONG_TYPE",
+       "WRONG_TYPE",
+       "WRONG_TYPE",
+       "WRONG_TYPE"
+      ],
+      "visible_types": [
+       "str",
+       "str",
+       "str",
+       "str"
+      ],
+      "latency_s": 13.7
+     },
+     {
+      "ok": false,
+      "codes": [
+       "WRONG_TYPE"
+      ],
+      "visible_types": [
+       "str"
+      ],
+      "latency_s": 10.0
+     },
+     {
+      "ok": false,
+      "codes": [
+       "WRONG_TYPE",
+       "WRONG_TYPE",
+       "WRONG_TYPE"
+      ],
+      "visible_types": [
+       "str",
+       "str",
+       "str"
+      ],
+      "latency_s": 12.3
+     },
+     {
+      "ok": false,
+      "codes": [
+       "WRONG_TYPE",
+       "WRONG_TYPE",
+       "WRONG_TYPE",
+       "WRONG_TYPE"
+      ],
+      "visible_types": [
+       "str",
+       "str",
+       "str",
+       "str"
+      ],
+      "latency_s": 13.5
+     }
+    ]
+   },
+   "clean": {
+    "requirement": "做一个视频站",
+    "first_pass_ok_rate": 1.0,
+    "visible_bool_rate": 1.0,
+    "codes_flat": [],
+    "samples": [
+     {
+      "ok": true,
+      "codes": [],
+      "visible_types": [
+       "bool",
+       "bool",
+       "bool",
+       "bool"
+      ],
+      "latency_s": 10.6
+     },
+     {
+      "ok": true,
+      "codes": [],
+      "visible_types": [
+       "bool",
+       "bool",
+       "bool",
+       "bool",
+       "bool",
+       "bool"
+      ],
+      "latency_s": 18.9
+     },
+     {
+      "ok": true,
+      "codes": [],
+      "visible_types": [
+       "bool",
+       "bool",
+       "bool",
+       "bool",
+       "bool",
+       "bool"
+      ],
+      "latency_s": 28.2
+     },
+     {
+      "ok": true,
+      "codes": [],
+      "visible_types": [
+       "bool",
+       "bool",
+       "bool"
+      ],
+      "latency_s": 14.4
+     }
+    ]
+   }
+  },
+  {
+   "name": "08-platform-support-repair",
+   "trap": {
+    "requirement": "双端站配直播组件（模型会先给 iOS 也配 live_stream）",
+    "first_pass_ok_rate": 0.0,
+    "visible_bool_rate": 1.0,
+    "codes_flat": [
+     "UNSUPPORTED_PLATFORM",
+     "TRACK_PARAM_FORMAT",
+     "UNSUPPORTED_PLATFORM",
+     "TRACK_PARAM_FORMAT",
+     "UNSUPPORTED_PLATFORM",
+     "UNSUPPORTED_PLATFORM",
+     "TRACK_PARAM_FORMAT"
+    ],
+    "samples": [
+     {
+      "ok": false,
+      "codes": [
+       "UNSUPPORTED_PLATFORM",
+       "TRACK_PARAM_FORMAT"
+      ],
+      "visible_types": [
+       "bool"
+      ],
+      "latency_s": 9.7
+     },
+     {
+      "ok": false,
+      "codes": [
+       "UNSUPPORTED_PLATFORM",
+       "TRACK_PARAM_FORMAT"
+      ],
+      "visible_types": [
+       "bool"
+      ],
+      "latency_s": 10.2
+     },
+     {
+      "ok": false,
+      "codes": [
+       "UNSUPPORTED_PLATFORM"
+      ],
+      "visible_types": [
+       "bool"
+      ],
+      "latency_s": 8.7
+     },
+     {
+      "ok": false,
+      "codes": [
+       "UNSUPPORTED_PLATFORM",
+       "TRACK_PARAM_FORMAT"
+      ],
+      "visible_types": [
+       "bool",
+       "bool",
+       "bool",
+       "bool"
+      ],
+      "latency_s": 11.3
+     }
+    ]
+   },
+   "clean": {
+    "requirement": "双端站配直播组件",
+    "first_pass_ok_rate": 0.0,
+    "visible_bool_rate": 1.0,
+    "codes_flat": [
+     "UNSUPPORTED_PLATFORM",
+     "UNSUPPORTED_PLATFORM",
+     "MODULE_NOT_IN_PACKAGE",
+     "UNSUPPORTED_PLATFORM",
+     "UNSUPPORTED_PLATFORM"
+    ],
+    "samples": [
+     {
+      "ok": false,
+      "codes": [
+       "UNSUPPORTED_PLATFORM"
+      ],
+      "visible_types": [
+       "bool"
+      ],
+      "latency_s": 8.7
+     },
+     {
+      "ok": false,
+      "codes": [
+       "UNSUPPORTED_PLATFORM",
+       "MODULE_NOT_IN_PACKAGE"
+      ],
+      "visible_types": [
+       "bool"
+      ],
+      "latency_s": 7.3
+     },
+     {
+      "ok": false,
+      "codes": [
+       "UNSUPPORTED_PLATFORM"
+      ],
+      "visible_types": [
+       "bool"
+      ],
+      "latency_s": 6.9
+     },
+     {
+      "ok": false,
+      "codes": [
+       "UNSUPPORTED_PLATFORM"
+      ],
+      "visible_types": [
+       "bool"
+      ],
+      "latency_s": 7.4
+     }
+    ]
+   }
+  }
+ ]
+}

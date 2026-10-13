@@ -1,0 +1,174 @@
+{
+ "model": "glm-5.3-flash",
+ "n": 10,
+ "requirement": "做一个三页视频社区站：首页带视频播放、搜索、导航和横幅广告；社区页带论坛和短视频流；个人页带商城和优惠券。需要微信与抖音双渠道投放追踪。",
+ "timestamp": "2026-10-14T01:49:11",
+ "parse_ok_rate": 1.0,
+ "structure_ok_rate": 1.0,
+ "deep_ok_rate": 0.8,
+ "visible_bool_rate": 1.0,
+ "track_wellformed_rate": 1.0,
+ "mean_latency_s": 27.2,
+ "samples": [
+  {
+   "i": 1,
+   "parse_ok": true,
+   "latency_s": 26.2,
+   "structure_ok": true,
+   "deep_ok": true,
+   "violation_codes": [],
+   "stats": {
+    "components": 8,
+    "visible_bool": 8,
+    "track_keys": 2,
+    "track_keys_wellformed": 2
+   }
+  },
+  {
+   "i": 2,
+   "parse_ok": true,
+   "latency_s": 33.0,
+   "structure_ok": true,
+   "deep_ok": true,
+   "violation_codes": [],
+   "stats": {
+    "components": 8,
+    "visible_bool": 8,
+    "track_keys": 2,
+    "track_keys_wellformed": 2
+   }
+  },
+  {
+   "i": 3,
+   "parse_ok": true,
+   "latency_s": 30.6,
+   "structure_ok": true,
+   "deep_ok": true,
+   "violation_codes": [],
+   "stats": {
+    "components": 8,
+    "visible_bool": 8,
+    "track_keys": 2,
+    "track_keys_wellformed": 2
+   }
+  },
+  {
+   "i": 4,
+   "parse_ok": true,
+   "latency_s": 18.2,
+   "structure_ok": true,
+   "deep_ok": true,
+   "violation_codes": [],
+   "stats": {
+    "components": 8,
+    "visible_bool": 8,
+    "track_keys": 2,
+    "track_keys_wellformed": 2
+   }
+  },
+  {
+   "i": 5,
+   "parse_ok": true,
+   "latency_s": 47.4,
+   "structure_ok": true,
+   "deep_ok": true,
+   "violation_codes": [],
+   "stats": {
+    "components": 8,
+    "visible_bool": 8,
+    "track_keys": 2,
+    "track_keys_wellformed": 2
+   }
+  },
+  {
+   "i": 6,
+   "parse_ok": true,
+   "latency_s": 25.1,
+   "structure_ok": true,
+   "deep_ok": true,
+   "violation_codes": [],
+   "stats": {
+    "components": 8,
+    "visible_bool": 8,
+    "track_keys": 2,
+    "track_keys_wellformed": 2
+   }
+  },
+  {
+   "i": 7,
+   "parse_ok": true,
+   "latency_s": 28.2,
+   "structure_ok": true,
+   "deep_ok": false,
+   "violation_codes": [
+    "INVALID_COMPONENT_ID",
+    "INVALID_COMPONENT_ID",
+    "INVALID_COMPONENT_ID",
+    "INVALID_COMPONENT_ID",
+    "INVALID_COMPONENT_ID",
+    "INVALID_COMPONENT_ID",
+    "INVALID_COMPONENT_ID",
+    "INVALID_COMPONENT_ID"
+   ],
+   "stats": {
+    "components": 8,
+    "visible_bool": 8,
+    "track_keys": 2,
+    "track_keys_wellformed": 2
+   }
+  },
+  {
+   "i": 8,
+   "parse_ok": true,
+   "latency_s": 18.3,
+   "structure_ok": true,
+   "deep_ok": true,
+   "violation_codes": [],
+   "stats": {
+    "components": 10,
+    "visible_bool": 10,
+    "track_keys": 2,
+    "track_keys_wellformed": 2
+   }
+  },
+  {
+   "i": 9,
+   "parse_ok": true,
+   "latency_s": 24.6,
+   "structure_ok": true,
+   "deep_ok": true,
+   "violation_codes": [],
+   "stats": {
+    "components": 8,
+    "visible_bool": 8,
+    "track_keys": 2,
+    "track_keys_wellformed": 2
+   }
+  },
+  {
+   "i": 10,
+   "parse_ok": true,
+   "latency_s": 20.8,
+   "structure_ok": true,
+   "deep_ok": false,
+   "violation_codes": [
+    "INVALID_COMPONENT_ID",
+    "INVALID_COMPONENT_ID",
+    "INVALID_COMPONENT_ID",
+    "INVALID_COMPONENT_ID",
+    "INVALID_COMPONENT_ID",
+    "INVALID_COMPONENT_ID",
+    "INVALID_COMPONENT_ID",
+    "INVALID_COMPONENT_ID",
+    "INVALID_COMPONENT_ID",
+    "INVALID_COMPONENT_ID"
+   ],
+   "stats": {
+    "components": 10,
+    "visible_bool": 10,
+    "track_keys": 2,
+    "track_keys_wellformed": 2
+   }
+  }
+ ]
+}

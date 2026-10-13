@@ -38,7 +38,9 @@ def main(argv=None):
             sys.exit(2)
         print(json.dumps({
             "status": result.status, "attempts": result.attempts,
-            "config": result.config, "violation_history": result.violation_history,
+            "config": result.config,
+            "last_raw_config": result.last_raw_config if result.status == "degraded" else None,
+            "violation_history": result.violation_history,
             "degraded_reasons": result.degraded_reasons,
         }, ensure_ascii=False, indent=2))
     elif args.cmd == "patch":

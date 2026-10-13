@@ -12,7 +12,7 @@ from dataclasses import dataclass, field
 from .llm import OpenAICompatLLM
 from .schema import validate_structure
 from .validators import run_all
-from .violations import Violation
+from .violations import Violation, build_feedback
 
 
 @dataclass
@@ -22,6 +22,7 @@ class GenerationResult:
     attempts: int                     # 实际尝试次数（1 + 重试）
     violation_history: list           # 每轮违规列表（结构化 dict）
     degraded_reasons: list = field(default_factory=list)  # 降级时的全部失败原因
+    last_raw_config: dict | None = None  # 降级时最后一轮非法输出（排障/转人工参考，不做交付物）
 
 
 def _call_llm(llm, requirement: str, feedback: list | None):
@@ -43,10 +44,12 @@ def generate_config(requirement: str, llm=None, max_retries: int = 3) -> Generat
         llm = OpenAICompatLLM()
     feedback = None
     history = []
+    last_raw = None
     total = 1 + max_retries
 
     for attempt in range(1, total + 1):
         raw, parse_violations = _call_llm(llm, requirement, feedback)
+        last_raw = raw
         if raw is None:
             violations = parse_violations
         else:
@@ -58,8 +61,12 @@ def generate_config(requirement: str, llm=None, max_retries: int = 3) -> Generat
         if not violations:            # 100% 合法才返回——不存在"大概是对的"
             return GenerationResult(status="ok", config=raw, attempts=attempt,
                                     violation_history=history)
-        feedback = [x.to_feedback() for x in violations]  # 结构化回喂
+        feedback = build_feedback(
+            violations, raw if raw is not None else None,
+            style=getattr(llm, "feedback_style", "json"),
+        )  # 结构化回喂（directive 风格附加当前值+修正指令）
 
     reasons = [d for round_vs in history for d in round_vs]
     return GenerationResult(status="degraded", config=None, attempts=total,
-                            violation_history=history, degraded_reasons=reasons)
+                            violation_history=history, degraded_reasons=reasons,
+                            last_raw_config=last_raw)

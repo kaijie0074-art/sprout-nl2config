@@ -1,0 +1,714 @@
+{
+ "model": "glm-5.3-flash",
+ "max_retries": 3,
+ "timestamp": "2026-10-14T01:24:50",
+ "converged_rate": 1.0,
+ "first_pass_rate": 0.875,
+ "failed": [],
+ "records": [
+  {
+   "name": "01-video-info-site",
+   "status": "ok",
+   "attempts": 1,
+   "wall_seconds": 23.2,
+   "violation_history": [
+    []
+   ],
+   "config": {
+    "siteName": "视频资讯站",
+    "templateId": "template_video",
+    "platforms": [
+     "android"
+    ],
+    "package": "pro",
+    "trackParams": {
+     "ch_weixin_main": "wx-1001"
+    },
+    "pages": [
+     {
+      "pageId": "home",
+      "title": "首页",
+      "components": [
+       {
+        "componentId": "search_bar",
+        "props": {
+         "placeholder": "搜索视频资讯"
+        },
+        "visible": true
+       },
+       {
+        "componentId": "nav_tab",
+        "props": {
+         "tabs": [
+          "推荐",
+          "热点",
+          "科技",
+          "娱乐"
+         ]
+        },
+        "visible": true
+       },
+       {
+        "componentId": "video_player",
+        "props": {
+         "autoPlay": false,
+         "mode": "news"
+        },
+        "visible": true
+       },
+       {
+        "componentId": "short_video_feed",
+        "props": {
+         "pageSize": 10
+        },
+        "visible": true
+       },
+       {
+        "componentId": "ad_banner",
+        "props": {
+         "position": "bottom"
+        },
+        "visible": true
+       }
+      ]
+     },
+     {
+      "pageId": "short_video",
+      "title": "短视频",
+      "components": [
+       {
+        "componentId": "short_video_feed",
+        "props": {
+         "layout": "fullscreen",
+         "autoRefresh": true
+        },
+        "visible": true
+       },
+       {
+        "componentId": "ad_popup",
+        "props": {
+         "frequency": "once_per_day"
+        },
+        "visible": true
+       }
+      ]
+     }
+    ],
+    "adSlots": [
+     {
+      "slotId": "ad_slot_home_banner",
+      "type": "banner",
+      "position": "home_bottom"
+     },
+     {
+      "slotId": "ad_slot_short_popup",
+      "type": "popup",
+      "position": "short_video"
+     }
+    ]
+   },
+   "degraded_reasons": []
+  },
+  {
+   "name": "02-ecommerce-live",
+   "status": "ok",
+   "attempts": 1,
+   "wall_seconds": 19.6,
+   "violation_history": [
+    []
+   ],
+   "config": {
+    "siteName": "精选好物带货商城",
+    "templateId": "template_ecommerce",
+    "platforms": [
+     "android",
+     "ios"
+    ],
+    "package": "flagship",
+    "trackParams": {
+     "ch_douyin_main": "dy-1001"
+    },
+    "pages": [
+     {
+      "pageId": "page_home",
+      "title": "首页",
+      "components": [
+       {
+        "componentId": "search_bar",
+        "props": {
+         "placeholder": "搜索心仪好物"
+        },
+        "visible": true
+       },
+       {
+        "componentId": "ad_banner",
+        "props": {
+         "slotId": "home_top_banner",
+         "autoPlay": true
+        },
+        "visible": true
+       },
+       {
+        "componentId": "short_video_feed",
+        "props": {
+         "feedType": "product",
+         "pageSize": 10
+        },
+        "visible": true
+       },
+       {
+        "componentId": "nav_tab",
+        "props": {
+         "tabs": [
+          "首页",
+          "商城",
+          "视频"
+         ]
+        },
+        "visible": true
+       }
+      ]
+     },
+     {
+      "pageId": "page_shop",
+      "title": "商城",
+      "components": [
+       {
+        "componentId": "mall_shop",
+        "props": {
+         "layout": "grid",
+         "showCategories": true
+        },
+        "visible": true
+       },
+       {
+        "componentId": "coupon_center",
+        "props": {
+         "showNewUserCoupons": true
+        },
+        "visible": true
+       },
+       {
+        "componentId": "nav_tab",
+        "props": {
+         "tabs": [
+          "首页",
+          "商城",
+          "视频"
+         ]
+        },
+        "visible": true
+       }
+      ]
+     },
+     {
+      "pageId": "page_video",
+      "title": "视频带货",
+      "components": [
+       {
+        "componentId": "video_player",
+        "props": {
+         "autoplay": false,
+         "loop": true
+        },
+        "visible": true
+       },
+       {
+        "componentId": "short_video_feed",
+        "props": {
+         "feedType": "recommend",
+         "pageSize": 10
+        },
+        "visible": true
+       },
+       {
+        "componentId": "nav_tab",
+        "props": {
+         "tabs": [
+          "首页",
+          "商城",
+          "视频"
+         ]
+        },
+        "visible": true
+       }
+      ]
+     }
+    ],
+    "adSlots": [
+     {
+      "slotId": "home_top_banner",
+      "componentId": "ad_banner"
+     }
+    ]
+   },
+   "degraded_reasons": []
+  },
+  {
+   "name": "03-community-ios",
+   "status": "ok",
+   "attempts": 1,
+   "wall_seconds": 10.2,
+   "violation_history": [
+    []
+   ],
+   "config": {
+    "siteName": "本地社区论坛",
+    "templateId": "template_community",
+    "platforms": [
+     "ios"
+    ],
+    "package": "pro",
+    "trackParams": {},
+    "pages": [
+     {
+      "pageId": "home",
+      "title": "社区首页",
+      "components": [
+       {
+        "componentId": "search_bar",
+        "props": {
+         "placeholder": "搜索本地帖子、活动、商家"
+        },
+        "visible": true
+       },
+       {
+        "componentId": "community_forum",
+        "props": {
+         "categories": [
+          "本地资讯",
+          "邻里互助",
+          "二手交易",
+          "生活服务",
+          "活动召集"
+         ]
+        },
+        "visible": true
+       },
+       {
+        "componentId": "nav_tab",
+        "props": {
+         "tabs": [
+          "首页",
+          "发现",
+          "发布",
+          "消息",
+          "我的"
+         ]
+        },
+        "visible": true
+       }
+      ]
+     }
+    ]
+   },
+   "degraded_reasons": []
+  },
+  {
+   "name": "04-hallucination-repair",
+   "status": "ok",
+   "attempts": 1,
+   "wall_seconds": 7.3,
+   "violation_history": [
+    []
+   ],
+   "config": {
+    "siteName": "视频站",
+    "templateId": "template_video",
+    "platforms": [
+     "android",
+     "ios"
+    ],
+    "package": "basic",
+    "trackParams": {},
+    "pages": [
+     {
+      "pageId": "home",
+      "title": "首页",
+      "components": [
+       {
+        "componentId": "video_player",
+        "props": {
+         "autoplay": false,
+         "controls": true
+        },
+        "visible": true
+       }
+      ]
+     }
+    ]
+   },
+   "degraded_reasons": []
+  },
+  {
+   "name": "05-type-drift-repair",
+   "status": "ok",
+   "attempts": 1,
+   "wall_seconds": 16.2,
+   "violation_history": [
+    []
+   ],
+   "config": {
+    "siteName": "视频站",
+    "templateId": "template_video",
+    "platforms": [
+     "android",
+     "ios"
+    ],
+    "package": "basic",
+    "trackParams": {},
+    "pages": [
+     {
+      "pageId": "home",
+      "title": "视频首页",
+      "components": [
+       {
+        "componentId": "search_bar",
+        "props": {
+         "placeholder": "搜索视频"
+        },
+        "visible": true
+       },
+       {
+        "componentId": "ad_banner",
+        "props": {
+         "position": "top"
+        },
+        "visible": true
+       },
+       {
+        "componentId": "video_player",
+        "props": {
+         "autoplay": false,
+         "controls": true
+        },
+        "visible": true
+       },
+       {
+        "componentId": "nav_tab",
+        "props": {
+         "tabs": [
+          "推荐",
+          "热门",
+          "关注"
+         ]
+        },
+        "visible": true
+       }
+      ]
+     }
+    ]
+   },
+   "degraded_reasons": []
+  },
+  {
+   "name": "06-naming-drift-repair",
+   "status": "ok",
+   "attempts": 1,
+   "wall_seconds": 27.6,
+   "violation_history": [
+    []
+   ],
+   "config": {
+    "siteName": "星流视频站",
+    "templateId": "template_video",
+    "platforms": [
+     "android",
+     "ios"
+    ],
+    "package": "pro",
+    "trackParams": {},
+    "pages": [
+     {
+      "pageId": "page_home",
+      "title": "首页",
+      "components": [
+       {
+        "componentId": "nav_tab",
+        "props": {
+         "tabs": [
+          "推荐",
+          "电影",
+          "剧集",
+          "综艺"
+         ]
+        },
+        "visible": true
+       },
+       {
+        "componentId": "search_bar",
+        "props": {
+         "placeholder": "搜索影片、演员、剧集"
+        },
+        "visible": true
+       },
+       {
+        "componentId": "short_video_feed",
+        "props": {
+         "feedType": "recommend",
+         "autoPlay": true
+        },
+        "visible": true
+       },
+       {
+        "componentId": "ad_banner",
+        "props": {
+         "position": "feed_bottom",
+         "size": "640x150"
+        },
+        "visible": true
+       }
+      ]
+     },
+     {
+      "pageId": "page_player",
+      "title": "播放页",
+      "components": [
+       {
+        "componentId": "video_player",
+        "props": {
+         "src": "",
+         "autoplay": true,
+         "controls": true,
+         "loop": false
+        },
+        "visible": true
+       },
+       {
+        "componentId": "ad_banner",
+        "props": {
+         "position": "player_below",
+         "size": "640x150"
+        },
+        "visible": true
+       }
+      ]
+     }
+    ],
+    "adSlots": [
+     {
+      "slotId": "slot_home_banner",
+      "pageId": "page_home",
+      "componentId": "ad_banner",
+      "position": "feed_bottom"
+     },
+     {
+      "slotId": "slot_player_banner",
+      "pageId": "page_player",
+      "componentId": "ad_banner",
+      "position": "player_below"
+     }
+    ]
+   },
+   "degraded_reasons": []
+  },
+  {
+   "name": "07-missing-required-repair",
+   "status": "ok",
+   "attempts": 1,
+   "wall_seconds": 29.5,
+   "violation_history": [
+    []
+   ],
+   "config": {
+    "siteName": "视频站",
+    "templateId": "template_video",
+    "platforms": [
+     "android",
+     "ios"
+    ],
+    "package": "basic",
+    "trackParams": {},
+    "pages": [
+     {
+      "pageId": "home",
+      "title": "首页",
+      "components": [
+       {
+        "componentId": "nav_tab",
+        "props": {
+         "tabs": [
+          "推荐",
+          "电影",
+          "电视剧",
+          "动漫"
+         ]
+        },
+        "visible": true
+       },
+       {
+        "componentId": "search_bar",
+        "props": {
+         "placeholder": "搜索影片、剧集",
+         "position": "top"
+        },
+        "visible": true
+       },
+       {
+        "componentId": "video_player",
+        "props": {
+         "autoplay": false,
+         "controls": true,
+         "quality": [
+          "480p",
+          "720p",
+          "1080p"
+         ]
+        },
+        "visible": true
+       },
+       {
+        "componentId": "ad_banner",
+        "props": {
+         "position": "bottom",
+         "size": "standard"
+        },
+        "visible": true
+       }
+      ]
+     },
+     {
+      "pageId": "player",
+      "title": "播放页",
+      "components": [
+       {
+        "componentId": "video_player",
+        "props": {
+         "autoplay": true,
+         "controls": true,
+         "fullscreen": true
+        },
+        "visible": true
+       },
+       {
+        "componentId": "ad_banner",
+        "props": {
+         "position": "inline",
+         "size": "standard"
+        },
+        "visible": true
+       }
+      ]
+     }
+    ],
+    "adSlots": [
+     {
+      "slotId": "home_bottom_banner",
+      "componentId": "ad_banner",
+      "pageId": "home"
+     },
+     {
+      "slotId": "player_inline_banner",
+      "componentId": "ad_banner",
+      "pageId": "player"
+     }
+    ]
+   },
+   "degraded_reasons": []
+  },
+  {
+   "name": "08-platform-support-repair",
+   "status": "ok",
+   "attempts": 2,
+   "wall_seconds": 64.7,
+   "violation_history": [
+    [
+     {
+      "code": "UNSUPPORTED_PLATFORM",
+      "path": "/pages/0/components/2",
+      "message": "组件 live_stream 不支持平台 ['ios']",
+      "layer": "semantic",
+      "options": [
+       "android"
+      ]
+     }
+    ],
+    []
+   ],
+   "config": {
+    "siteName": "星播双端站",
+    "templateId": "template_video",
+    "platforms": [
+     "android",
+     "ios"
+    ],
+    "package": "pro",
+    "trackParams": {
+     "ch_weixin_main": "wx-1001",
+     "ch_douyin_main": "dy-2001",
+     "ch_baidu_feed": "bd-3001"
+    },
+    "pages": [
+     {
+      "pageId": "home",
+      "title": "首页",
+      "components": [
+       {
+        "componentId": "search_bar",
+        "props": {
+         "placeholder": "搜索直播间/视频"
+        },
+        "visible": true
+       },
+       {
+        "componentId": "video_player",
+        "props": {
+         "mode": "live",
+         "src": "https://cdn.example.com/live/main.m3u8",
+         "autoplay": true
+        },
+        "visible": true
+       },
+       {
+        "componentId": "short_video_feed",
+        "props": {
+         "feedUrl": "https://api.example.com/feed/recommend"
+        },
+        "visible": true
+       },
+       {
+        "componentId": "nav_tab",
+        "props": {
+         "tabs": [
+          "首页",
+          "直播",
+          "我的"
+         ]
+        },
+        "visible": true
+       }
+      ]
+     },
+     {
+      "pageId": "live",
+      "title": "直播",
+      "components": [
+       {
+        "componentId": "video_player",
+        "props": {
+         "mode": "live",
+         "src": "https://cdn.example.com/live/room1.m3u8"
+        },
+        "visible": true
+       },
+       {
+        "componentId": "ad_banner",
+        "props": {
+         "slotId": "live_banner_01"
+        },
+        "visible": true
+       }
+      ]
+     }
+    ],
+    "adSlots": [
+     {
+      "slotId": "live_banner_01",
+      "type": "banner"
+     }
+    ]
+   },
+   "degraded_reasons": []
+  }
+ ]
+}
