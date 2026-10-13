@@ -1,13 +1,8 @@
-"""确定性 Mock LLM：按场景脚本化输出"带缺陷的配置"，模拟裸模型的真实失败模式。
+"""失败模式回归语料（测试夹具，仅 tests/ 内使用；产品代码不含任何脚本化模型）。
 
-关键行为：
-  - 无反馈时，同一场景稳定复现同一缺陷（失败模式可确定性回归）；
-  - 收到**结构化校验反馈**后，可纠正场景在第 2 次尝试返回修正配置
-    （体现"校验-修复循环可收敛"）；
-  - stubborn 场景永不修正（驱动"超过重试上限→显式降级转人工"路径）。
-
-局限（有意为之）：Mock 按场景脚本化，不真正理解需求文本——本仓库
-验证的是约束层工程，不是模型能力。
+数据形态：scenario -> (首次/坏输出, 修正输出)。经 tests.providers.ScriptedProvider
+驱动校验-修复循环，回归 7 类真实失败模式的拦截与收敛（docs/05 映射表 F1-F7/D1）。
+合法基线配置 BASE_* 同时供 patch/校验器测试复用。
 """
 from copy import deepcopy
 
@@ -80,7 +75,7 @@ def _live_stream_added(base: dict) -> dict:
 
 
 def _snake(base: dict) -> dict:
-    """生成 snake_case 漂移版本（失败模式 3）。"""
+    """snake_case 命名漂移版本（失败模式 3）。"""
     bad = deepcopy(base)
     bad["site_name"] = bad.pop("siteName")
     bad["template_id"] = bad.pop("templateId")
@@ -99,14 +94,14 @@ def _defect(base: dict, mutate) -> dict:
     return bad
 
 
-# ---------- 场景脚本：scenario -> (首次/坏输出, 修正输出) ----------
+# ---------- 场景语料：scenario -> (首次/坏输出, 修正输出) ----------
 
 SCENARIOS = {
     # 正常场景：坏输出 == 正确输出
     "ok":           (deepcopy(BASE_VIDEO), deepcopy(BASE_VIDEO)),
     "ok_ecommerce": (deepcopy(BASE_ECOMMERCE), deepcopy(BASE_ECOMMERCE)),
     "ok_community": (deepcopy(BASE_COMMUNITY), deepcopy(BASE_COMMUNITY)),
-    # 失败模式 1：幻觉 ID——库里只有 video_player，模型编造 v2
+    # 失败模式 1：幻觉 ID——库里只有 video_player，编造 v2
     "hallucinated_id": (
         _defect(BASE_VIDEO, lambda c: c["pages"][0]["components"][0].__setitem__("componentId", "video_player_v2")),
         deepcopy(BASE_VIDEO),
@@ -180,21 +175,3 @@ SCENARIOS = {
 
 # 可纠正场景（stubborn 之外全部可被结构化反馈纠正）
 CORRECTABLE = {s for s in SCENARIOS if s != "stubborn"}
-
-
-class MockLLM:
-    """脚本化 Mock：generate(requirement, feedback) -> 配置 dict。"""
-
-    def __init__(self, scenario: str = "ok"):
-        if scenario not in SCENARIOS:
-            raise ValueError(f"未知场景 {scenario}，可选：{sorted(SCENARIOS)}")
-        self.scenario = scenario
-        self.attempts = 0
-
-    def generate(self, requirement: str, feedback: list | None = None) -> dict:
-        self.attempts += 1
-        bad, fixed = SCENARIOS[self.scenario]
-        # 模拟真实行为：收到结构化反馈（含错误码与可选值）后才修正
-        if feedback and self.scenario in CORRECTABLE:
-            return deepcopy(fixed)
-        return deepcopy(bad)

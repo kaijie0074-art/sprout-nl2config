@@ -1,6 +1,5 @@
 {
   "name": "02-ecommerce-live",
-  "scenario": "ok_ecommerce",
   "requirement": "做一个电商带货站，双端，旗舰套餐，接抖音渠道追踪",
   "expected": {
     "siteName": "带货商城站",

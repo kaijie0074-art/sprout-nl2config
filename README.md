@@ -14,7 +14,7 @@
 
 ```mermaid
 flowchart LR
-    A[中文口语需求] --> B[Mock LLM<br/>按场景输出带缺陷配置]
+    A[中文口语需求] --> B[真实 LLM<br/>OpenAI 兼容协议]
     B --> C[结构校验<br/>schema.py]
     C -->|结构违规| F[结构化反馈回喂<br/>错误码+路径+可选值]
     C -->|通过| D[引用/语义/业务校验<br/>validators.py]
@@ -58,7 +58,7 @@ python3 -m nl2config.cli regress
 python3 -m unittest discover -s tests -v   # 21 项全绿
 ```
 
-修复前后的完整对比见 [docs/06-回归记录.md](docs/06-回归记录.md)：同一套测试在缺陷基线上 **26 项失败**，修复后 **21/21 通过**；golden 指标一次通过率 37.5%、含重试收敛率 100%、幻觉 ID 率 12.5%（全部被循环捕获并修复）。
+修复前后的完整对比见 [docs/06-回归记录.md](docs/06-回归记录.md)：同一套测试在缺陷基线上 **26 项失败**，修复后全部通过；校验-修复循环保证"含重试收敛 + 永不返回非法配置"。golden 指标（一次通过率/收敛率/幻觉 ID 率）对真实 LLM 在线度量（`python -m nl2config.cli regress`，需凭证）。
 
 ## 目录结构
 
@@ -69,7 +69,7 @@ nl2config/
   generator.py     # 校验-修复循环 + 显式降级
   patch_engine.py  # 第四层：增量 patch（白名单/锁/全量重写防护/原子性）
   golden.py        # 第五层：回归评测集与指标
-  mock_llm.py      # 确定性 Mock：12 场景复现真实失败模式
+  llm.py           # 真实 LLM 客户端（OpenAI 兼容协议，环境变量凭证）
   registry.py      # 平台资产注册表（组件/模板/套餐/广告位约束，带版本）
   api.py           # 稳定 API 表面（baseline 与最终态共用签名）
 tests/             # 21 项回归测试（baseline 上 26 项失败 = 复现材料）
@@ -84,4 +84,4 @@ examples/          # CLI 演示样例
 
 ## 声明
 
-**模拟项目**：为末龙科技 AI 应用工程师岗三大技术难题的工程化模拟（2026-10）。LLM 为确定性 Mock（验证约束层工程而非模型能力）；低代码平台 schema 为虚构样本；技术路线源自公开调研与业务链路推演，非该公司内部实证。开源调研引用见 [docs/03](docs/03-开源调研.md)。
+**说明**：针对末龙科技 AI 应用工程师岗三大技术难题之问题③的工程化实现（2026-10）。LLM 为真实 API（OpenAI 兼容协议，默认智谱，可切 DeepSeek 等）；低代码平台 schema 为示例资产；技术路线源自公开调研与业务链路推演。开源调研引用见 [docs/03](docs/03-开源调研.md)。

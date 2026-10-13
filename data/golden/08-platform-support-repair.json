@@ -1,6 +1,5 @@
 {
   "name": "08-platform-support-repair",
-  "scenario": "unsupported_platform",
   "requirement": "双端站配直播组件（模型会先给 iOS 也配 live_stream）",
   "expected": {
     "siteName": "客户视频站",

@@ -1,6 +1,5 @@
 {
   "name": "01-video-info-site",
-  "scenario": "ok",
   "requirement": "做一个视频资讯站，安卓端，专业版套餐，接微信渠道追踪",
   "expected": {
     "siteName": "客户视频站",

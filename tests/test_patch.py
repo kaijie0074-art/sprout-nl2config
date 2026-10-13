@@ -2,7 +2,7 @@
 import unittest
 
 from nl2config.api import apply_patch
-from nl2config.mock_llm import BASE_VIDEO
+from scenarios import BASE_VIDEO
 
 LOCKED = "/pages/0/components/1/props"  # 人工调过的 ad_banner 属性
 

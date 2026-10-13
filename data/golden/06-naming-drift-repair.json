@@ -1,6 +1,5 @@
 {
   "name": "06-naming-drift-repair",
-  "scenario": "naming_drift",
   "requirement": "做一个视频站（模型会先混用 snake_case 字段名）",
   "expected": {
     "siteName": "客户视频站",

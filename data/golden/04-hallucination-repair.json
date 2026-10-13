@@ -1,6 +1,5 @@
 {
   "name": "04-hallucination-repair",
-  "scenario": "hallucinated_id",
   "requirement": "做一个视频站，首页放视频播放器（模型会先编造 video_player_v2）",
   "expected": {
     "siteName": "客户视频站",

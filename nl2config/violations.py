@@ -21,7 +21,7 @@ class Violation:
         return d
 
     def to_feedback(self) -> dict:
-        """回喂给 LLM 的结构化反馈（Mock LLM 依据它修正）。"""
+        """回喂给 LLM 的结构化反馈（模型据此修正后重试）。"""
         fb = {"code": self.code, "path": self.path, "message": self.message}
         if self.options is not None:
             fb["options"] = self.options

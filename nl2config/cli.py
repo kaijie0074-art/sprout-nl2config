@@ -1,7 +1,10 @@
 """命令行入口：
-  python -m nl2config.cli generate --requirement "..." --scenario hallucinated_id
+  python -m nl2config.cli generate --requirement "..." [--max-retries 3]
   python -m nl2config.cli patch --config cfg.json --patch patch.json [--locked /pages/0/components/1/props]
   python -m nl2config.cli regress
+
+generate/regress 走真实 LLM（OpenAI 兼容协议），需环境变量
+NL2CONFIG_API_KEY（或 OPENAI_API_KEY）；可选 NL2CONFIG_BASE_URL / NL2CONFIG_MODEL。
 """
 import argparse
 import json
@@ -9,7 +12,7 @@ import sys
 from pathlib import Path
 
 from .api import apply_patch, generate_config, run_golden_regression
-
+from .llm import LlmConfigError
 
 def main(argv=None):
     parser = argparse.ArgumentParser(prog="nl2config", description="自然语言→低代码配置 约束生成层")
@@ -17,7 +20,6 @@ def main(argv=None):
 
     g = sub.add_parser("generate", help="需求 → 合法配置（含校验-修复循环与降级）")
     g.add_argument("--requirement", required=True)
-    g.add_argument("--scenario", default="ok")
     g.add_argument("--max-retries", type=int, default=3)
 
     p = sub.add_parser("patch", help="应用受约束的增量 patch")
@@ -29,7 +31,11 @@ def main(argv=None):
 
     args = parser.parse_args(argv)
     if args.cmd == "generate":
-        result = generate_config(args.requirement, scenario=args.scenario, max_retries=args.max_retries)
+        try:
+            result = generate_config(args.requirement, max_retries=args.max_retries)
+        except LlmConfigError as e:
+            print(f"错误：{e}", file=sys.stderr)
+            sys.exit(2)
         print(json.dumps({
             "status": result.status, "attempts": result.attempts,
             "config": result.config, "violation_history": result.violation_history,
@@ -46,7 +52,11 @@ def main(argv=None):
         }, ensure_ascii=False, indent=2))
         sys.exit(0 if result.ok else 1)
     elif args.cmd == "regress":
-        report = run_golden_regression()
+        try:
+            report = run_golden_regression()
+        except LlmConfigError as e:
+            print(f"错误：{e}", file=sys.stderr)
+            sys.exit(2)
         print(json.dumps(report, ensure_ascii=False, indent=2))
         sys.exit(0 if report["passed"] else 1)
 

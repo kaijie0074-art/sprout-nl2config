@@ -2,7 +2,7 @@
 import unittest
 
 from nl2config.api import apply_patch
-from nl2config.mock_llm import BASE_VIDEO
+from scenarios import BASE_VIDEO
 from nl2config.registry import PACKAGES
 
 

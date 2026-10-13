@@ -1,6 +1,5 @@
 {
   "name": "03-community-ios",
-  "scenario": "ok_community",
   "requirement": "做一个本地社区论坛站，只要苹果端",
   "expected": {
     "siteName": "本地社区站",

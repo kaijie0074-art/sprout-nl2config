@@ -1,6 +1,5 @@
 {
   "name": "07-missing-required-repair",
-  "scenario": "missing_required",
   "requirement": "做一个视频站（模型会先漏掉 templateId）",
   "expected": {
     "siteName": "客户视频站",

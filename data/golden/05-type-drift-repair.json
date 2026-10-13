@@ -1,6 +1,5 @@
 {
   "name": "05-type-drift-repair",
-  "scenario": "type_drift",
   "requirement": "做一个视频站（模型会先把 visible 写成字符串 'true'）",
   "expected": {
     "siteName": "客户视频站",
