@@ -9,6 +9,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      NL2CONFIG_API_KEY: ${{ secrets.NL2CONFIG_API_KEY }}
+      NL2CONFIG_BASE_URL: ${{ secrets.NL2CONFIG_BASE_URL }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -17,8 +20,5 @@ jobs:
       - name: Run regression tests
         run: python3 -m unittest discover -s tests -v
       - name: Golden regression (live, requires credentials)
-        if: ${{ secrets.NL2CONFIG_API_KEY != '' }}
-        env:
-          NL2CONFIG_API_KEY: ${{ secrets.NL2CONFIG_API_KEY }}
-          NL2CONFIG_BASE_URL: ${{ secrets.NL2CONFIG_BASE_URL }}
+        if: env.NL2CONFIG_API_KEY != ''
         run: python3 -m nl2config.cli regress
